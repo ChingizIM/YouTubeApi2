@@ -4,14 +4,15 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.youtubeapi"
         minSdk 24
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
+
 
         buildConfigField "String", "BASE_URL", "\"https://www.googleapis.com/youtube/v3/\""
         buildConfigField "String", "API_KEY", "\"AIzaSyC5xuWOnf0SV48hdwaaDSIL4xoSAvZCbx8\""
@@ -27,6 +28,7 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -34,13 +36,15 @@ android {
     buildFeatures{
         viewBinding true
     }
+    namespace 'com.example.youtubeapi'
 }
 
 dependencies {
 
-    // UI
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.0'
+    // UI
+
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
@@ -60,4 +64,16 @@ dependencies {
 
 // Interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
+
+    //Koin
+    def koin_version = "2.2.3"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-androidx-scope:$koin_version"
+    implementation "io.insert-koin:koin-androidx-viewmodel:$koin_version"
+    implementation "io.insert-koin:koin-androidx-fragment:$koin_version"
+
+    //Exo player
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.1'
+
+
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_no_inet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/il_no_conection"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/il_no_conection"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/big_margin22"
+        android:text="@string/no_internet_connection"
+        android:textColor="@color/black"
+        android:textSize="@dimen/page_margin"
+        tools:ignore="SpUsage,UnknownId" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_try_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/thirty_two"
+        android:layout_marginBottom="@dimen/thirty_two"
+        android:text="@string/try_again"
+        android:theme="@style/ButtonStyle"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</RelativeLayout>
